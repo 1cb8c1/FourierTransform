@@ -1,10 +1,8 @@
 package complex
 
 import degreesToRad
-import kotlin.math.PI
-import kotlin.math.cos
-import kotlin.math.sin
-import kotlin.math.sqrt
+import radToDegrees
+import kotlin.math.*
 
 fun toComplex(modulus: Double, angle: Double): Complex {
     val newReal = modulus * sin((PI * angle)*180)
@@ -53,6 +51,13 @@ class Complex(val real: Double, val im: Double) : Cloneable {
 
     fun sin(): Double{
         return im/abs()
+    }
+
+    fun phase(): Double{
+        if(real < 0.1 && real > -0.1){
+            return radToDegrees(asin(sin()))
+        }
+        return radToDegrees(atan(im/real))
     }
 
     override fun toString(): String{

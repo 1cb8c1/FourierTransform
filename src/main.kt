@@ -1,10 +1,13 @@
 fun main(){
-    val signal = Signal(mySin(5.0))
-    val values = sampler(16, 0..1, signal)
+    val signal = Signal(mySin(1.0))
+    val values = sampler(160, 0..1, signal)
     values.forEach{println("%.3f".format(it))}
     val dft = DFT(values)
-    println("Fourier Coefficients")
-    dft.magnitudes.forEach { println("%.3f".format(it)) }
+    println("\nFourier Coefficients")
+    dft.sidedCoefficients.forEach { println(it) }
+
+    println("\nAngle")
+    println(dft.sidedCoefficients[1].phase())
 
 }
 

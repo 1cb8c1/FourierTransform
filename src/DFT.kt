@@ -5,7 +5,8 @@ class DFT(samples: List<Double>) {
     val samplesSize = samples.size
     val sidedCoefficients = getSidedCoefficients(samples)
     val magnitudes = initMagnitudes()
-    fun getSidedCoefficients(samples: List<Double>): List<Complex>{
+
+    private fun getSidedCoefficients(samples: List<Double>): List<Complex>{
         val coefficients = mutableListOf<Complex>()
         for(k in 0 until samples.size/2){
             var complex = Complex(0.0,0.0)
