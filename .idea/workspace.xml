@@ -5,10 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FourierTransform/DFT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FourierTransform/DFT.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FourierTransform/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FourierTransform/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FourierTransform/complex/Complex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FourierTransform/complex/Complex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FourierTransform/complex/ComplexKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FourierTransform/complex/ComplexKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DFT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DFT.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/complex/Complex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/complex/Complex.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

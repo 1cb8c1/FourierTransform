@@ -1,5 +1,7 @@
 import complex.Complex
 import complex.euler
+import kotlin.math.cos
+import kotlin.math.sin
 
 class DFT(samples: List<Double>) {
     val samplesSize = samples.size
@@ -24,5 +26,16 @@ class DFT(samples: List<Double>) {
             magnitudes.plusAssign(it.abs()/samplesSize)
         }
         return magnitudes.toList()
+    }
+
+    fun signal() = Signal { t: Double ->
+        var y: Double = 0.0
+        sidedCoefficients.forEachIndexed { freq: Int, it: Complex ->
+            val magnitude = it.abs()/samplesSize
+            val angle = it.phase()
+            y += magnitude * cos(degreesToRad((t*360 + angle)*freq))
+        }
+        val result = y
+        result
     }
 }
