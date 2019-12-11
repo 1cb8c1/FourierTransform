@@ -1,11 +1,17 @@
 import kotlin.math.PI
 import kotlin.math.sin
 
-class Signal {
-    fun getAmplitude(t: Double): Double {
-        val x = t*360
-        return sin(degreesToRad(x))
+fun radToDegrees(rad: Double): Double = (rad*180)/ PI
+fun degreesToRad(degree: Double): Double = (degree*PI)/180
+
+fun mySin(frequency: Double) = { t: Double ->
+        val x = 360*frequency
+        sin(degreesToRad(t*x))
     }
-    private fun radToDegrees(rad: Double): Double = (rad*180)/ PI
-    private fun degreesToRad(degree: Double): Double = (degree*PI)/180
+
+class Signal(val f: (Double) -> Double) {
+    fun getAmplitude(t: Double): Double {
+        return f(t)
+    }
 }
+

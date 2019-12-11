@@ -1,9 +1,19 @@
 package complex
 
+import degreesToRad
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
+
+fun toComplex(modulus: Double, angle: Double): Complex {
+    val newReal = modulus * sin((PI * angle)*180)
+    val newIm = modulus * cos((PI * angle)/180)
+    return Complex(newReal,newIm)
+}
+fun euler(exponent: Double): Complex {
+    return Complex(cos(degreesToRad(exponent)),sin(degreesToRad(exponent)))
+}
 
 class Complex(val real: Double, val im: Double) : Cloneable {
     operator fun plus(c: Complex): Complex {
@@ -18,6 +28,10 @@ class Complex(val real: Double, val im: Double) : Cloneable {
         val newReal = real*c.real - im*c.im
         val newIm = real*c.im + im*c.real
         return Complex(newReal,newIm)
+    }
+
+    operator fun times(d: Double): Complex{
+        return Complex(real*d,im*d)
     }
 
     operator fun div(c: Complex): Complex{
@@ -47,13 +61,5 @@ class Complex(val real: Double, val im: Double) : Cloneable {
 
     override fun clone(): Complex{
         return Complex(real, im)
-    }
-
-    companion object {
-        fun toComplex(modulus: Double, angle: Double): Complex {
-            val newReal = modulus * sin((PI * angle)*180)
-            val newIm = modulus * cos((PI * angle)/180)
-            return Complex(newReal,newIm)
-        }
     }
 }
