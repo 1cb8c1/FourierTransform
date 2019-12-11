@@ -1,7 +1,8 @@
 import complex.Complex
+import complex.sampler
 
 fun main(){
-    val a = Complex(8.0,4.0)
-    val b = Complex(4.0, -4.0)
-    println(a/b)
+    val signal = Signal()
+    val values = sampler(8,0..1,signal)
+    values.forEach{println("%.3f".format(it))}
 }
