@@ -33,7 +33,7 @@ class DFT(samples: List<Double>) {
         sidedCoefficients.forEachIndexed { freq: Int, it: Complex ->
             val magnitude = it.abs()/samplesSize
             val angle = it.phase()
-            y += magnitude * cos(degreesToRad((t*360 + angle)*freq))
+            y += magnitude * sin(degreesToRad((t*360 + angle + 90.0)*freq))
         }
         val result = y
         result
