@@ -1,5 +1,6 @@
 import complex.Complex
 import complex.euler
+import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -17,6 +18,7 @@ class DFT(samples: List<Double>) {
             }
             coefficients.plusAssign(complex * 2.0)
         }
+        println(coefficients)
         return coefficients.toList()
     }
 
@@ -33,7 +35,7 @@ class DFT(samples: List<Double>) {
         sidedCoefficients.forEachIndexed { freq: Int, it: Complex ->
             val magnitude = it.abs()/samplesSize
             val angle = it.phase()
-            y += magnitude * sin(degreesToRad((t*360 + angle + 90.0)*freq))
+            y += magnitude * cos(degreesToRad((t*360)*freq + angle))
         }
         val result = y
         result
